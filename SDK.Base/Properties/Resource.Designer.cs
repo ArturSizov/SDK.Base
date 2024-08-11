@@ -70,6 +70,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Dark theme.
+        /// </summary>
+        public static string DarkTheme {
+            get {
+                return ResourceManager.GetString("DarkTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Delete.
         /// </summary>
         public static string Delete {
@@ -84,6 +93,15 @@ namespace SDK.Base.Properties {
         public static string LastName {
             get {
                 return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Light theme.
+        /// </summary>
+        public static string LightTheme {
+            get {
+                return ResourceManager.GetString("LightTheme", resourceCulture);
             }
         }
         
@@ -147,6 +165,33 @@ namespace SDK.Base.Properties {
         public static string SelectGallery {
             get {
                 return ResourceManager.GetString("SelectGallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Settings.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Setting up a theme.
+        /// </summary>
+        public static string SettingTheme {
+            get {
+                return ResourceManager.GetString("SettingTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на System theme.
+        /// </summary>
+        public static string SystemTheme {
+            get {
+                return ResourceManager.GetString("SystemTheme", resourceCulture);
             }
         }
         

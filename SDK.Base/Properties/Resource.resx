@@ -120,11 +120,17 @@
   <data name="Birthday" xml:space="preserve">
     <value>Birthday</value>
   </data>
+  <data name="DarkTheme" xml:space="preserve">
+    <value>Dark theme</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Last name</value>
+  </data>
+  <data name="LightTheme" xml:space="preserve">
+    <value>Light theme</value>
   </data>
   <data name="ListEmpty" xml:space="preserve">
     <value>List is empty</value>
@@ -146,6 +152,15 @@
   </data>
   <data name="SelectGallery" xml:space="preserve">
     <value>Select from Gallery</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingTheme" xml:space="preserve">
+    <value>Setting up a theme</value>
+  </data>
+  <data name="SystemTheme" xml:space="preserve">
+    <value>System theme</value>
   </data>
   <data name="TakePhoto" xml:space="preserve">
     <value>Take Photo</value>

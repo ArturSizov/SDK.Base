@@ -5,17 +5,17 @@
         /// <summary>
         /// Selected topic
         /// </summary>
-        public string SelectedTheme { get; set; }
+        public string? SelectedTheme { get; set; }
 
         /// <summary>
         /// Applies a theme
         /// </summary>
-        /// <param name="themeName"></param>
-        public void SetTheme(string themeName);
+        /// <param name="theme"></param>
+        public void SetTheme(AppTheme theme);
 
         /// <summary>
         /// Themes collection
         /// </summary>
-        List<string> Themes { get; }
+        List<AppTheme> Themes { get; }
     }
 }

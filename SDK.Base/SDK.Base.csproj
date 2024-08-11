@@ -7,12 +7,19 @@
   </PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="DevExpress.Maui.Charts" Version="24.1.3" />
+		<PackageReference Include="DevExpress.Maui.CollectionView" Version="24.1.3" />
+		<PackageReference Include="DevExpress.Maui.Core" Version="24.1.3" />
+		<PackageReference Include="DevExpress.Maui.DataGrid" Version="24.1.3" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.2.6" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.70" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.70" />
 	</ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,12 +28,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Update="Themes\Dark.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Themes\Light.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -34,15 +35,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <MauiXaml Update="Themes\Dark.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="Themes\Light.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
   </ItemGroup>
 
 </Project>

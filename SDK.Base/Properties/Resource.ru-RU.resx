@@ -120,11 +120,17 @@
   <data name="Birthday" xml:space="preserve">
     <value>Дата рождения</value>
   </data>
+  <data name="DarkTheme" xml:space="preserve">
+    <value>Тёмная тема</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Удалить</value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Фамилия</value>
+  </data>
+  <data name="LightTheme" xml:space="preserve">
+    <value>Светлая тема</value>
   </data>
   <data name="ListEmpty" xml:space="preserve">
     <value>Список пуст</value>
@@ -146,6 +152,15 @@
   </data>
   <data name="SelectGallery" xml:space="preserve">
     <value>Выбрать из галереи</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="SettingTheme" xml:space="preserve">
+    <value>Настройка темы</value>
+  </data>
+  <data name="SystemTheme" xml:space="preserve">
+    <value>Системная тема</value>
   </data>
   <data name="TakePhoto" xml:space="preserve">
     <value>Сделать фотографию</value>

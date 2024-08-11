@@ -1,36 +1,58 @@
 ﻿using SDK.Base.Abstractions;
+using SDK.Base.Extensions;
+using SDK.Base.ViewModels;
 
 namespace SDK.Base.Themes
 {
-    public class ThemesManager : IThemesManager
+    public class ThemesManager : ViewModelBase ,IThemesManager
     {
         /// <summary>
-        /// Themes dictionary
+        /// App settings
         /// </summary>
-        private readonly IDictionary<string, ResourceDictionary> _themes = new Dictionary<string, ResourceDictionary>
+        private readonly IAppSettings _settings;
+
+        /// <summary>
+        /// Selected theme
+        /// </summary>
+        private string? _selectedTheme;
+
+        /// <inheritdoc/>
+        public string? SelectedTheme { get => _selectedTheme; set => SetProperty(ref _selectedTheme, value, () => _settings.SelectTheme = value); }
+
+
+        /// <inheritdoc/>
+        public List<AppTheme> Themes { get; } = new() 
         {
-            [nameof(Light)] = new Light(),
-            [nameof(Dark)] = new Dark()
+           AppTheme.Dark, AppTheme.Light, AppTheme.Unspecified
         };
 
-        /// <inheritdoc/>
-        public string SelectedTheme { get; set; } = nameof(Light);
-
-        /// <inheritdoc/>
-        public List<string> Themes => _themes.Keys.ToList();
-
-        /// <inheritdoc/>
-        public void SetTheme(string themeName)
+        public ThemesManager(IAppSettings settings)
         {
-            if (SelectedTheme == themeName)
+            _settings = settings;
+
+            switch (_settings.SelectTheme)
+            {
+                case "Dark":
+                    SetTheme(AppTheme.Dark);
+                    break;
+                case "Light":
+                    SetTheme(AppTheme.Light);
+                    break;
+                case "Unspecified":
+                    SetTheme(AppTheme.Unspecified);
+                    break;
+            }
+        }
+
+        /// <inheritdoc/>
+        public void SetTheme(AppTheme theme)
+        {
+            if (Application.Current == null)
                 return;
 
-            var theme = _themes[themeName];
+            SelectedTheme = theme.ToString();
 
-            Application.Current?.Resources.MergedDictionaries.Clear();
-            Application.Current?.Resources.MergedDictionaries.Add(theme);
-
-            SelectedTheme = themeName;
+            Application.Current.UserAppTheme = theme;
         }
     }
 }
