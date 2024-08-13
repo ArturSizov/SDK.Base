@@ -61,6 +61,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Avatar editor.
+        /// </summary>
+        public static string AvatarEditor {
+            get {
+                return ResourceManager.GetString("AvatarEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Birthday.
         /// </summary>
         public static string Birthday {
@@ -84,6 +93,15 @@ namespace SDK.Base.Properties {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Delete photo.
+        /// </summary>
+        public static string DeletePhoto {
+            get {
+                return ResourceManager.GetString("DeletePhoto", resourceCulture);
             }
         }
         
@@ -151,6 +169,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Search.
         /// </summary>
         public static string Search {
@@ -187,6 +214,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Select from gallery.
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на System theme.
         /// </summary>
         public static string SystemTheme {
@@ -196,7 +232,7 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Take Photo.
+        ///   Ищет локализованную строку, похожую на Take photo.
         /// </summary>
         public static string TakePhoto {
             get {

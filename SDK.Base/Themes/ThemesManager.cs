@@ -1,24 +1,19 @@
 ﻿using SDK.Base.Abstractions;
 using SDK.Base.Extensions;
-using SDK.Base.ViewModels;
 
 namespace SDK.Base.Themes
 {
-    public class ThemesManager : ViewModelBase ,IThemesManager
+    public class ThemesManager : IThemesManager
     {
+        #region Private property
         /// <summary>
         /// App settings
         /// </summary>
         private readonly IAppSettings _settings;
 
-        /// <summary>
-        /// Selected theme
-        /// </summary>
-        private string? _selectedTheme;
+        #endregion
 
-        /// <inheritdoc/>
-        public string? SelectedTheme { get => _selectedTheme; set => SetProperty(ref _selectedTheme, value, () => _settings.SelectTheme = value); }
-
+        #region Public property
 
         /// <inheritdoc/>
         public List<AppTheme> Themes { get; } = new() 
@@ -26,33 +21,56 @@ namespace SDK.Base.Themes
            AppTheme.Dark, AppTheme.Light, AppTheme.Unspecified
         };
 
+        #endregion
+
+        /// <summary>
+        /// Ctor
+        /// </summary>
+        /// <param name="settings"></param>
         public ThemesManager(IAppSettings settings)
         {
             _settings = settings;
+        }
+
+        #region Methods
+        /// <inheritdoc/>
+        public string GetSelectedTheme()
+        {
+            if (Application.Current == null)
+                return "Unspecified";
+
+            string selectedTheme = "Unspecified";
 
             switch (_settings.SelectTheme)
             {
                 case "Dark":
-                    SetTheme(AppTheme.Dark);
+                    Application.Current.UserAppTheme = AppTheme.Dark;
+                    selectedTheme = "Dark";
                     break;
                 case "Light":
-                    SetTheme(AppTheme.Light);
+                    Application.Current.UserAppTheme = AppTheme.Light;
+                    selectedTheme = "Light";
                     break;
                 case "Unspecified":
-                    SetTheme(AppTheme.Unspecified);
+                    Application.Current.UserAppTheme = AppTheme.Unspecified;
+                    selectedTheme = "Unspecified";
                     break;
             }
+
+            return selectedTheme;
         }
 
         /// <inheritdoc/>
-        public void SetTheme(AppTheme theme)
+        public string SetTheme(AppTheme theme)
         {
             if (Application.Current == null)
-                return;
-
-            SelectedTheme = theme.ToString();
+                return "Unspecified";
 
             Application.Current.UserAppTheme = theme;
+
+           return _settings.SelectTheme = theme.ToString();
         }
+
+        #endregion
     }
 }

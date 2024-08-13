@@ -3,15 +3,15 @@
     public interface IThemesManager
     {
         /// <summary>
-        /// Selected topic
+        /// Returns the selected topic
         /// </summary>
-        public string? SelectedTheme { get; set; }
+        public string GetSelectedTheme();
 
         /// <summary>
         /// Applies a theme
         /// </summary>
         /// <param name="theme"></param>
-        public void SetTheme(AppTheme theme);
+        public string SetTheme(AppTheme theme);
 
         /// <summary>
         /// Themes collection
