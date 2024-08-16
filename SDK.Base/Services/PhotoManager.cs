@@ -1,5 +1,4 @@
-﻿using DevExpress.Utils;
-using FFImageLoading;
+﻿using FFImageLoading;
 using FFImageLoading.Work;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Graphics.Platform;
@@ -83,9 +82,36 @@ namespace SDK.Base.Services
         }
 
         /// <inheritdoc/>
-        public Task<string?> AddPhotoGalleryAsync()
+        public async Task<string?> AddPhotoGalleryAsync()
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (MediaPicker.Default.IsCaptureSupported)
+                {
+                    var image = await MediaPicker.Default.PickPhotoAsync();
+
+                    if (image != null)
+                    {
+                        using var stream = await GetStreamAsync(image);
+                        _image = PlatformImage.FromStream(stream);
+                    }
+                }
+                if (_image != null)
+                {
+                    _logger.LogDebug("Image uploaded");
+
+                    return _image.Downsize((float)_maxSize, true).AsBase64();
+                }
+
+                _logger.LogDebug("The image is not loaded");
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogDebug(ex.Message);
+                return null;
+            }
         }
 
         /// <inheritdoc/>
