@@ -115,10 +115,7 @@ namespace SDK.Base.Services
         }
 
         /// <inheritdoc/>
-        public bool Delete()
-        {
-            throw new NotImplementedException();
-        }
+        public string? Delete() => null;
 
         /// <summary>
         /// Returns a flood with the desired resolution

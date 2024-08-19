@@ -97,6 +97,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Are you sure you want to delete your avatar photo?.
+        /// </summary>
+        public static string DeleteAvatar {
+            get {
+                return ResourceManager.GetString("DeleteAvatar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Delete photo.
         /// </summary>
         public static string DeletePhoto {

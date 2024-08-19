@@ -129,6 +129,9 @@
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="DeleteAvatar" xml:space="preserve">
+    <value>Are you sure you want to delete your avatar photo?</value>
+  </data>
   <data name="DeletePhoto" xml:space="preserve">
     <value>Delete photo</value>
   </data>
