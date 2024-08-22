@@ -24,6 +24,11 @@ namespace SDK.Base.Services
         private readonly IImageService _imageService;
 
         /// <summary>
+        /// Dialog service
+        /// </summary>
+        private readonly IDialogService _dialog;
+
+        /// <summary>
         /// MAUI image
         /// </summary>
         private IImage? _image;
@@ -41,10 +46,11 @@ namespace SDK.Base.Services
         /// <summary>
         /// Ctor
         /// </summary>
-        public PhotoManager(ILoggerFactory loggerFactory, IImageService imageService)
+        public PhotoManager(ILoggerFactory loggerFactory, IImageService imageService, IDialogService dialog)
         {
             _logger = loggerFactory.CreateLogger<PhotoManager>();
             _imageService = imageService;
+            _dialog = dialog;
         }
 
         #region Methods
@@ -52,7 +58,7 @@ namespace SDK.Base.Services
         public async Task<string?> TakePhotoAsync()
         {
             try
-            {                            
+            {
                 if (MediaPicker.Default.IsCaptureSupported)
                 {
                     var photo = await MediaPicker.Default.CapturePhotoAsync();
@@ -60,10 +66,11 @@ namespace SDK.Base.Services
                     if (photo != null)
                     {
                         using var stream = await GetStreamAsync(photo);
+
                         _image = PlatformImage.FromStream(stream);
                     }
                 }
-                if(_image != null)
+                if (_image != null)
                 {
                     _logger.LogDebug("Photo taken");
 
@@ -126,10 +133,14 @@ namespace SDK.Base.Services
         {
             if (file != null)
             {
+                await _dialog.ShowLoadingAsync(SDK.Base.Properties.Resource.LoadingFoto);
+
                 var stream = await _imageService.LoadStream(_ => file.OpenReadAsync())
                                                 .DownSample((int)_maxSize, (int)_maxSize)
                                                 .DownSampleMode(InterpolationMode.Medium)
                                                 .AsJPGStreamAsync(_imageService, 50);
+                _dialog.CloseLoadingPopup();
+
                 return stream;
             }
 

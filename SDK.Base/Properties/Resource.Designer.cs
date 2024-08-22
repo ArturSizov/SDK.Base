@@ -142,6 +142,24 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Loading....
+        /// </summary>
+        public static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Loading foto....
+        /// </summary>
+        public static string LoadingFoto {
+            get {
+                return ResourceManager.GetString("LoadingFoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Middle name.
         /// </summary>
         public static string MiddleName {
@@ -219,15 +237,6 @@ namespace SDK.Base.Properties {
         public static string SettingTheme {
             get {
                 return ResourceManager.GetString("SettingTheme", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Select from gallery.
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         
