@@ -61,6 +61,24 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Age: .
+        /// </summary>
+        public static string Age {
+            get {
+                return ResourceManager.GetString("Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Today is the Anniversary!.
+        /// </summary>
+        public static string Anniversary {
+            get {
+                return ResourceManager.GetString("Anniversary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Avatar editor.
         /// </summary>
         public static string AvatarEditor {
@@ -79,11 +97,38 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Don&apos;t forget to congratulate!.
+        /// </summary>
+        public static string Congratulate {
+            get {
+                return ResourceManager.GetString("Congratulate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Dark theme.
         /// </summary>
         public static string DarkTheme {
             get {
                 return ResourceManager.GetString("DarkTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Days left until the Anniversary: .
+        /// </summary>
+        public static string DaysAnniversary {
+            get {
+                return ResourceManager.GetString("DaysAnniversary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Days left until your birthday: .
+        /// </summary>
+        public static string DaysBirthday {
+            get {
+                return ResourceManager.GetString("DaysBirthday", resourceCulture);
             }
         }
         
@@ -178,6 +223,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Note.
+        /// </summary>
+        public static string Note {
+            get {
+                return ResourceManager.GetString("Note", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Position.
         /// </summary>
         public static string Position {
@@ -255,6 +309,15 @@ namespace SDK.Base.Properties {
         public static string TakePhoto {
             get {
                 return ResourceManager.GetString("TakePhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Today is your birthday!.
+        /// </summary>
+        public static string TodayBirthday {
+            get {
+                return ResourceManager.GetString("TodayBirthday", resourceCulture);
             }
         }
     }

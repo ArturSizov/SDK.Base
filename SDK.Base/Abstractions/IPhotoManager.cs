@@ -18,6 +18,6 @@
         /// Delete photo
         /// </summary>
         /// <returns></returns>
-        public string? Delete();
+        public string? Delete(string? image);
     }
 }

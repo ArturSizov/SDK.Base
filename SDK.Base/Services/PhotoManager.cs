@@ -1,9 +1,5 @@
-﻿using FFImageLoading;
-using FFImageLoading.Work;
-using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Graphics.Platform;
+﻿using Microsoft.Extensions.Logging;
 using SDK.Base.Abstractions;
-using IImage = Microsoft.Maui.Graphics.IImage;
 
 namespace SDK.Base.Services
 {
@@ -17,40 +13,14 @@ namespace SDK.Base.Services
         /// Logger
         /// </summary>
         private readonly ILogger _logger;
-
-        /// <summary>
-        /// Image service
-        /// </summary>
-        private readonly IImageService _imageService;
-
-        /// <summary>
-        /// Dialog service
-        /// </summary>
-        private readonly IDialogService _dialog;
-
-        /// <summary>
-        /// MAUI image
-        /// </summary>
-        private IImage? _image;
-
-        /// <summary>
-        /// Photo resolution
-        /// </summary>
-        private double _maxSize = DeviceInfo.Platform switch
-        {
-            DevicePlatform => 640.0
-        };
-
         #endregion
 
         /// <summary>
         /// Ctor
         /// </summary>
-        public PhotoManager(ILoggerFactory loggerFactory, IImageService imageService, IDialogService dialog)
+        public PhotoManager(ILoggerFactory loggerFactory)
         {
             _logger = loggerFactory.CreateLogger<PhotoManager>();
-            _imageService = imageService;
-            _dialog = dialog;
         }
 
         #region Methods
@@ -59,22 +29,16 @@ namespace SDK.Base.Services
         {
             try
             {
-                if (MediaPicker.Default.IsCaptureSupported)
-                {
-                    var photo = await MediaPicker.Default.CapturePhotoAsync();
+                if (!MediaPicker.Default.IsCaptureSupported)
+                    return null;
 
-                    if (photo != null)
-                    {
-                        using var stream = await GetStreamAsync(photo);
+                var photo = await MediaPicker.Default.CapturePhotoAsync();
 
-                        _image = PlatformImage.FromStream(stream);
-                    }
-                }
-                if (_image != null)
+                if (photo != null)
                 {
                     _logger.LogDebug("Photo taken");
 
-                    return _image.Downsize((float)_maxSize, true).AsBase64();
+                    return photo.FullPath;
                 }
 
                 _logger.LogDebug("Photo not taken");
@@ -93,21 +57,16 @@ namespace SDK.Base.Services
         {
             try
             {
-                if (MediaPicker.Default.IsCaptureSupported)
-                {
-                    var image = await MediaPicker.Default.PickPhotoAsync();
+                if (!MediaPicker.Default.IsCaptureSupported)
+                    return null;
 
-                    if (image != null)
-                    {
-                        using var stream = await GetStreamAsync(image);
-                        _image = PlatformImage.FromStream(stream);
-                    }
-                }
-                if (_image != null)
+                var image = await MediaPicker.Default.PickPhotoAsync();
+
+                if (image != null)
                 {
                     _logger.LogDebug("Image uploaded");
 
-                    return _image.Downsize((float)_maxSize, true).AsBase64();
+                    return image.FullPath;
                 }
 
                 _logger.LogDebug("The image is not loaded");
@@ -122,30 +81,16 @@ namespace SDK.Base.Services
         }
 
         /// <inheritdoc/>
-        public string? Delete() => null;
-
-        /// <summary>
-        /// Returns a flood with the desired resolution
-        /// </summary>
-        /// <param name="file"></param>
-        /// <returns></returns>
-        private async Task<Stream?> GetStreamAsync(FileResult? file)
+        public string? Delete(string? image)
         {
-            if (file != null)
-            {
-                await _dialog.ShowLoadingAsync(SDK.Base.Properties.Resource.LoadingFoto);
+           if(image == null) 
+                return null;
 
-                var stream = await _imageService.LoadStream(_ => file.OpenReadAsync())
-                                                .DownSample((int)_maxSize, (int)_maxSize)
-                                                .DownSampleMode(InterpolationMode.Medium)
-                                                .AsJPGStreamAsync(_imageService, 50);
-                _dialog.CloseLoadingPopup();
-
-                return stream;
-            }
+             File.Delete(image);
 
             return null;
         }
+
         #endregion
     }
 }

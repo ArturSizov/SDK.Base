@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Age" xml:space="preserve">
+    <value>Age: </value>
+  </data>
+  <data name="Anniversary" xml:space="preserve">
+    <value>Today is the Anniversary!</value>
+  </data>
   <data name="AvatarEditor" xml:space="preserve">
     <value>Avatar editor</value>
   </data>
   <data name="Birthday" xml:space="preserve">
     <value>Birthday</value>
   </data>
+  <data name="Congratulate" xml:space="preserve">
+    <value>Don't forget to congratulate!</value>
+  </data>
   <data name="DarkTheme" xml:space="preserve">
     <value>Dark theme</value>
+  </data>
+  <data name="DaysAnniversary" xml:space="preserve">
+    <value>Days left until the Anniversary: </value>
+  </data>
+  <data name="DaysBirthday" xml:space="preserve">
+    <value>Days left until your birthday: </value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
@@ -156,6 +171,9 @@
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
   <data name="Position" xml:space="preserve">
     <value>Position</value>
   </data>
@@ -182,5 +200,8 @@
   </data>
   <data name="TakePhoto" xml:space="preserve">
     <value>Take photo</value>
+  </data>
+  <data name="TodayBirthday" xml:space="preserve">
+    <value>Today is your birthday!</value>
   </data>
 </root>

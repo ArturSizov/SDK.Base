@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Age" xml:space="preserve">
+    <value>Возраст: </value>
+  </data>
+  <data name="Anniversary" xml:space="preserve">
+    <value>Сегодня Юбилей!</value>
+  </data>
   <data name="AvatarEditor" xml:space="preserve">
     <value>Аватар редактор</value>
   </data>
   <data name="Birthday" xml:space="preserve">
     <value>Дата рождения</value>
   </data>
+  <data name="Congratulate" xml:space="preserve">
+    <value>Не забудьте поздравить!</value>
+  </data>
   <data name="DarkTheme" xml:space="preserve">
     <value>Тёмная тема</value>
+  </data>
+  <data name="DaysAnniversary" xml:space="preserve">
+    <value>Осталось дней до Юбилея: </value>
+  </data>
+  <data name="DaysBirthday" xml:space="preserve">
+    <value>Осталось дней до дня рождения: </value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Удалить</value>
@@ -156,6 +171,9 @@
   <data name="Name" xml:space="preserve">
     <value>Имя</value>
   </data>
+  <data name="Note" xml:space="preserve">
+    <value>Примечание</value>
+  </data>
   <data name="Position" xml:space="preserve">
     <value>Должность</value>
   </data>
@@ -182,5 +200,8 @@
   </data>
   <data name="TakePhoto" xml:space="preserve">
     <value>Сделать фотографию</value>
+  </data>
+  <data name="TodayBirthday" xml:space="preserve">
+    <value>Сегодня день рождения!</value>
   </data>
 </root>

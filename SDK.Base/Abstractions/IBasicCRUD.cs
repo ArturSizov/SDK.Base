@@ -45,5 +45,4 @@
         /// <returns>The deleted items count</returns>
         Task<int> DeleteAllAsync();
     }
-
 }

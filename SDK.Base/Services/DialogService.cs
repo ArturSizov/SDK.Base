@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Maui.Core;
 using Controls.UserDialogs.Maui;
-using DevExpress.Maui.Core.Internal;
 using SDK.Base.Abstractions;
 using SDK.Base.ViewModels.Popup;
 
@@ -44,6 +43,5 @@ namespace SDK.Base.Services
 
         /// <inheritdoc/>
         public void CloseLoadingPopup() => _userDialogs.HideHud();
-
     }
 }
