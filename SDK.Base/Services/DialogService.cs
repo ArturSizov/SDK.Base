@@ -35,13 +35,18 @@ namespace SDK.Base.Services
                                  (bool?)await _popup.ShowPopupAsync<UserDialogPopupViewModel>(onPresenting: viewModel => viewModel.Text = text);
 
         /// <inheritdoc/>
-        public async Task ShowLoadingAsync(string text)
+        public async Task<bool> ShowLoadingAsync(string text)
         {
              await Task.Delay(100);
             _userDialogs.Loading(text);
+            return false;
         }
 
         /// <inheritdoc/>
-        public void CloseLoadingPopup() => _userDialogs.HideHud();
+        public bool CloseLoadingPopup()
+        {
+            _userDialogs.HideHud();
+            return true;
+        }
     }
 }

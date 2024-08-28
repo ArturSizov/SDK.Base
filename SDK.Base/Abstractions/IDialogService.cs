@@ -13,11 +13,11 @@
         /// Show loading indicator
         /// </summary>
         /// <param name="text"></param>
-        Task ShowLoadingAsync(string text);
+        Task<bool> ShowLoadingAsync(string text);
 
         /// <summary>
         /// Close loading indicator
         /// </summary>
-        void CloseLoadingPopup();
+        bool CloseLoadingPopup();
     }
 }
