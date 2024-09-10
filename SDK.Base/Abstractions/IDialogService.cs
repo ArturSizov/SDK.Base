@@ -16,6 +16,12 @@
         Task<bool> ShowLoadingAsync(string text);
 
         /// <summary>
+        /// Show error message
+        /// </summary>
+        /// <param name="text"></param>
+        void ShowErrorMessage(string text);
+
+        /// <summary>
         /// Close loading indicator
         /// </summary>
         bool CloseLoadingPopup();

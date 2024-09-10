@@ -12,7 +12,7 @@ namespace SDK.Base.Services
 
         public DateTime Time
         {
-            get => Preferences.Get(nameof(Time), DateTime.Now);
+            get => Preferences.Get(nameof(Time), new DateTime(1989, 7, 29, 8, 00, 00));
             set => Preferences.Set(nameof(Time), value);
         }
     }

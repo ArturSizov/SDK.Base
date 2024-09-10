@@ -81,14 +81,26 @@ namespace SDK.Base.Services
         }
 
         /// <inheritdoc/>
-        public string? Delete(string? image)
+        public bool Delete(string? image)
         {
-           if(image == null) 
-                return null;
+            try
+            {
+                if (image == null)
+                    return false;
 
-             File.Delete(image);
+                _logger.LogDebug("The image is not delete");
 
-            return null;
+                File.Delete(image);
+
+                _logger.LogDebug("Image delete");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogDebug(ex.Message);
+                return false;
+            }        
         }
 
         #endregion

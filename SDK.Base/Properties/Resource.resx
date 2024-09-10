@@ -159,6 +159,21 @@
   <data name="DeleteUser" xml:space="preserve">
     <value>Are you sure you want to delete all information</value>
   </data>
+  <data name="ErrorAddingPhoto" xml:space="preserve">
+    <value>Error adding photo</value>
+  </data>
+  <data name="ErrorDeletingPhoto" xml:space="preserve">
+    <value>Error deleting photo</value>
+  </data>
+  <data name="FailedCreate" xml:space="preserve">
+    <value>Failed to create</value>
+  </data>
+  <data name="FailedDelete" xml:space="preserve">
+    <value>Failed to delete</value>
+  </data>
+  <data name="FailedUpdate" xml:space="preserve">
+    <value>Failed to update</value>
+  </data>
   <data name="LastName" xml:space="preserve">
     <value>Last name</value>
   </data>
@@ -177,6 +192,9 @@
   <data name="MiddleName" xml:space="preserve">
     <value>Middle name</value>
   </data>
+  <data name="MinimumLength" xml:space="preserve">
+    <value>At least 2 characters</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -186,6 +204,9 @@
   <data name="Note" xml:space="preserve">
     <value>Note</value>
   </data>
+  <data name="NotEmpty" xml:space="preserve">
+    <value>Cannot be empty</value>
+  </data>
   <data name="Position" xml:space="preserve">
     <value>Position</value>
   </data>
@@ -194,6 +215,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>Saving</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>

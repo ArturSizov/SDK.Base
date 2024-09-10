@@ -187,6 +187,51 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Error adding photo.
+        /// </summary>
+        public static string ErrorAddingPhoto {
+            get {
+                return ResourceManager.GetString("ErrorAddingPhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Error deleting photo.
+        /// </summary>
+        public static string ErrorDeletingPhoto {
+            get {
+                return ResourceManager.GetString("ErrorDeletingPhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Failed to create.
+        /// </summary>
+        public static string FailedCreate {
+            get {
+                return ResourceManager.GetString("FailedCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Failed to delete.
+        /// </summary>
+        public static string FailedDelete {
+            get {
+                return ResourceManager.GetString("FailedDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Failed to update.
+        /// </summary>
+        public static string FailedUpdate {
+            get {
+                return ResourceManager.GetString("FailedUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Last name.
         /// </summary>
         public static string LastName {
@@ -241,6 +286,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на At least 2 characters.
+        /// </summary>
+        public static string MinimumLength {
+            get {
+                return ResourceManager.GetString("MinimumLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Name.
         /// </summary>
         public static string Name {
@@ -268,6 +322,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Cannot be empty.
+        /// </summary>
+        public static string NotEmpty {
+            get {
+                return ResourceManager.GetString("NotEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Position.
         /// </summary>
         public static string Position {
@@ -291,6 +354,15 @@ namespace SDK.Base.Properties {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Saving.
+        /// </summary>
+        public static string Saving {
+            get {
+                return ResourceManager.GetString("Saving", resourceCulture);
             }
         }
         

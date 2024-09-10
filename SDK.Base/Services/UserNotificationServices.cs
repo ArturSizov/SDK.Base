@@ -6,8 +6,19 @@ namespace SDK.Base.Services
     /// <summary>
     /// Notification services
     /// </summary>
-    public class NotificationServices : INotificationServices
+    public class UserNotificationServices : IUserNotificationServices
     {
+        public INotificationService NotificationService { get; set; }
+
+        /// <summary>
+        /// Ctor
+        /// </summary>
+        /// <param name="notificationService"></param>
+        public UserNotificationServices(INotificationService notificationService)
+        {
+            NotificationService = notificationService;
+        }
+
         /// <inheritdoc/>
         public async Task AddNotificationAsync(int notificationId, string? title, string? description, DateTime date, DateTime time)
         {
@@ -29,13 +40,13 @@ namespace SDK.Base.Services
                 }
             };
 
-            await LocalNotificationCenter.Current.Show(notification);
+           await NotificationService.Show(notification);
         }
 
         /// <inheritdoc/>
-        public void Cancel(int notificationId) => LocalNotificationCenter.Current.Cancel(notificationId);
+        public void Cancel(int notificationId) => NotificationService.Cancel(notificationId);
 
         /// <inheritdoc/>
-        public void CancelAll() => LocalNotificationCenter.Current.CancelAll();
+        public void CancelAll() => NotificationService.CancelAll();
     }
 }

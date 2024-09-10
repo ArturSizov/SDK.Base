@@ -1,10 +1,17 @@
-﻿namespace SDK.Base.Abstractions
+﻿using Plugin.LocalNotification;
+
+namespace SDK.Base.Abstractions
 {
     /// <summary>
     /// Notification service
     /// </summary>
-    public interface INotificationServices
+    public interface IUserNotificationServices
     {
+       /// <summary>
+       /// Notification service
+       /// </summary>
+       public INotificationService NotificationService { get; set; }
+
        /// <summary>
        /// Adds a reminder
        /// </summary>

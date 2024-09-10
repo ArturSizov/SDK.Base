@@ -159,6 +159,21 @@
   <data name="DeleteUser" xml:space="preserve">
     <value>Вы действительно хотите удалить всю информацию</value>
   </data>
+  <data name="ErrorAddingPhoto" xml:space="preserve">
+    <value>Ошибка добавления фотографии</value>
+  </data>
+  <data name="ErrorDeletingPhoto" xml:space="preserve">
+    <value>Ошибка удаления фотографии</value>
+  </data>
+  <data name="FailedCreate" xml:space="preserve">
+    <value>Не удалось создать</value>
+  </data>
+  <data name="FailedDelete" xml:space="preserve">
+    <value>Не удалось удалить</value>
+  </data>
+  <data name="FailedUpdate" xml:space="preserve">
+    <value>Не удалось обновить</value>
+  </data>
   <data name="LastName" xml:space="preserve">
     <value>Фамилия</value>
   </data>
@@ -177,6 +192,9 @@
   <data name="MiddleName" xml:space="preserve">
     <value>Отчество</value>
   </data>
+  <data name="MinimumLength" xml:space="preserve">
+    <value>Не менее 2-ух символов</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Имя</value>
   </data>
@@ -186,6 +204,9 @@
   <data name="Note" xml:space="preserve">
     <value>Примечание</value>
   </data>
+  <data name="NotEmpty" xml:space="preserve">
+    <value>Не может быть пустым</value>
+  </data>
   <data name="Position" xml:space="preserve">
     <value>Должность</value>
   </data>
@@ -194,6 +215,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Сохранить</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>Сохранение</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Поиск</value>

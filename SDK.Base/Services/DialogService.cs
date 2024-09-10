@@ -39,7 +39,20 @@ namespace SDK.Base.Services
         {
              await Task.Delay(100);
             _userDialogs.Loading(text);
+
             return false;
+        }
+
+        /// <inheritdoc/>
+        public void ShowErrorMessage(string text)
+        {
+            _userDialogs.ShowToast(new ToastConfig()
+            {
+                Icon = "error.png",
+                Message = text,
+                BackgroundColor = Colors.Red,
+                Position = ToastPosition.Bottom
+            });
         }
 
         /// <inheritdoc/>

@@ -9,8 +9,8 @@
 		/// Adds one entry to the storage
 		/// </summary>
 		/// <param name="item"></param>
-		/// <returns></returns>
-		Task<int> CreateAsync(T item);
+		/// <returns>Boolian</returns>
+		Task<bool> CreateAsync(T item);
 
         /// <summary>
         /// Returns one record from the storage
@@ -23,15 +23,15 @@
         /// Updates one record in the storage
         /// </summary>
         /// <param name="item">Item to update</param>
-        /// <returns>The updated items count</returns>
-        Task<int> UpdateAsync(T item);
+        /// <returns>Boolian</returns>
+        Task<bool> UpdateAsync(T item);
 
         /// <summary>
         /// Deleting a Single Record in a storage
         /// </summary>
         /// <param name="item"></param>
-        /// <returns>The deleted items count</returns>
-        Task<int> DeleteAsync(T item);
+        /// <returns>Boolian</returns>
+        Task<bool> DeleteAsync(T item);
 
         /// <summary>
         /// Returns all records from the storage
@@ -42,7 +42,7 @@
         /// <summary>
         /// Deletes all records from the storage. Be careful!
         /// </summary>
-        /// <returns>The deleted items count</returns>
-        Task<int> DeleteAllAsync();
+        /// <returns>Boolian</returns>
+        Task<bool> DeleteAllAsync();
     }
 }
