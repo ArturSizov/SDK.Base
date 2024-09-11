@@ -34,16 +34,7 @@ namespace SDK.Base.Services
 
                 var photo = await MediaPicker.Default.CapturePhotoAsync();
 
-                if (photo != null)
-                {
-                    _logger.LogDebug("Photo taken");
-
-                    return photo.FullPath;
-                }
-
-                _logger.LogDebug("Photo not taken");
-
-                return null;
+                return GetFilePath(photo);
             }
             catch (Exception ex)
             {
@@ -62,16 +53,7 @@ namespace SDK.Base.Services
 
                 var image = await MediaPicker.Default.PickPhotoAsync();
 
-                if (image != null)
-                {
-                    _logger.LogDebug("Image uploaded");
-
-                    return image.FullPath;
-                }
-
-                _logger.LogDebug("The image is not loaded");
-
-                return null;
+                return GetFilePath(image);
             }
             catch (Exception ex)
             {
@@ -86,21 +68,52 @@ namespace SDK.Base.Services
             try
             {
                 if (image == null)
+                {
+                    _logger.LogDebug("The image is not delete");
                     return false;
-
-                _logger.LogDebug("The image is not delete");
+                }
 
                 File.Delete(image);
 
-                _logger.LogDebug("Image delete");
+                if(!File.Exists(image))
+                {
+                    _logger.LogDebug("Image delete");
+                    return true;
+                }
 
-                return true;
+                _logger.LogDebug("The image is not delete");
+
+                return false;
             }
             catch (Exception ex)
             {
                 _logger.LogDebug(ex.Message);
                 return false;
             }        
+        }
+
+        private string? GetFilePath(FileResult? image)
+        {
+            if (image == null)
+            {
+                _logger.LogDebug("The image is not loaded");
+                return null;
+            }
+
+            var localFilePath = Path.Combine(FileSystem.AppDataDirectory, image.FileName);
+
+            File.Copy(image.FullPath, localFilePath, true);
+
+            File.Delete(image.FullPath);
+
+            if (!File.Exists(localFilePath))
+            {
+                _logger.LogDebug("The image is not loaded");
+                return null;
+            }
+
+            _logger.LogDebug("Image uploaded");
+            return localFilePath;
         }
 
         #endregion

@@ -9,5 +9,11 @@
         /// <param name="routeParameters"></param>
         /// <returns></returns>
         Task NavigateToAsync(string route, IDictionary<string, object>? routeParameters = null);
+
+        /// <summary>
+        /// Navigate pop
+        /// </summary>
+        /// <returns></returns>
+        Task PopAsync();
     }
 }

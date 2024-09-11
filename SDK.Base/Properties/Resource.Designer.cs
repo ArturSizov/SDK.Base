@@ -331,6 +331,24 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Notifications are disabled.
+        /// </summary>
+        public static string NotificationsDisabled {
+            get {
+                return ResourceManager.GetString("NotificationsDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Notifications enabled.
+        /// </summary>
+        public static string NotificationsEnabled {
+            get {
+                return ResourceManager.GetString("NotificationsEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Position.
         /// </summary>
         public static string Position {

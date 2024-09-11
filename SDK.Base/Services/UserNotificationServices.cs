@@ -34,7 +34,7 @@ namespace SDK.Base.Services
 
                 Schedule = new NotificationRequestSchedule
                 {
-                    NotifyTime = new DateTime(DateTime.Now.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second),
+                    NotifyTime = new DateTime(DateTime.Now.Year, date.Month, date.Day, time.Hour, time.Minute, 0),
                     RepeatType = NotificationRepeat.TimeInterval,
                     NotifyRepeatInterval = date.AddYears(1) - date
                 }

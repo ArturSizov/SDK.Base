@@ -22,6 +22,12 @@
         void ShowErrorMessage(string text);
 
         /// <summary>
+        /// Show information message
+        /// </summary>
+        /// <param name="text"></param>
+        void ShowInformationMessage(string text);
+
+        /// <summary>
         /// Close loading indicator
         /// </summary>
         bool CloseLoadingPopup();

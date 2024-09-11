@@ -56,6 +56,18 @@ namespace SDK.Base.Services
         }
 
         /// <inheritdoc/>
+        public void ShowInformationMessage(string text)
+        {
+            _userDialogs.ShowToast(new ToastConfig()
+            {
+                Icon = "info.png",
+                Message = text,
+                BackgroundColor = Colors.Green,
+                Position = ToastPosition.Bottom
+            });
+        }
+
+        /// <inheritdoc/>
         public bool CloseLoadingPopup()
         {
             _userDialogs.HideHud();

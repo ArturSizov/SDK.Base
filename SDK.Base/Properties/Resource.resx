@@ -207,6 +207,12 @@
   <data name="NotEmpty" xml:space="preserve">
     <value>Cannot be empty</value>
   </data>
+  <data name="NotificationsDisabled" xml:space="preserve">
+    <value>Notifications are disabled</value>
+  </data>
+  <data name="NotificationsEnabled" xml:space="preserve">
+    <value>Notifications enabled</value>
+  </data>
   <data name="Position" xml:space="preserve">
     <value>Position</value>
   </data>

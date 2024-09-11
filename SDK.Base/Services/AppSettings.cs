@@ -15,5 +15,11 @@ namespace SDK.Base.Services
             get => Preferences.Get(nameof(Time), new DateTime(1989, 7, 29, 8, 00, 00));
             set => Preferences.Set(nameof(Time), value);
         }
+
+        public bool IsChecked
+        {
+            get => Preferences.Get(nameof(IsChecked), true);
+            set => Preferences.Set(nameof(IsChecked), value);
+        }
     }
 }
