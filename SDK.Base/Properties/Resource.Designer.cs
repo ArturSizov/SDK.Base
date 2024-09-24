@@ -187,6 +187,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Devices.
+        /// </summary>
+        public static string Devices {
+            get {
+                return ResourceManager.GetString("Devices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Error adding photo.
         /// </summary>
         public static string ErrorAddingPhoto {
@@ -277,6 +286,15 @@ namespace SDK.Base.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Logs.
+        /// </summary>
+        public static string Logs {
+            get {
+                return ResourceManager.GetString("Logs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Middle name.
         /// </summary>
         public static string MiddleName {
@@ -291,6 +309,15 @@ namespace SDK.Base.Properties {
         public static string MinimumLength {
             get {
                 return ResourceManager.GetString("MinimumLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Monitoring in Telegram.
+        /// </summary>
+        public static string MonitoringInTelegram {
+            get {
+                return ResourceManager.GetString("MonitoringInTelegram", resourceCulture);
             }
         }
         

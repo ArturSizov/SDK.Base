@@ -252,4 +252,13 @@
   <data name="Yes" xml:space="preserve">
     <value>Да</value>
   </data>
+  <data name="MonitoringInTelegram" xml:space="preserve">
+    <value>Мониторинг в Телеграм</value>
+  </data>
+  <data name="Devices" xml:space="preserve">
+    <value>Устройства</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Логи</value>
+  </data>
 </root>
